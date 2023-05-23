@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.parte_superior{
+    height: 85vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-left: 0;
+}
+.imagem{
+    height: 85vh;
+    width: 58vw;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+.circulo{
+    background-color: yellow;
+    height: 90%;
+    width: 360vw;
+    border-radius: 360px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+/* .julio{
+    height: 260px;
+    width: 360px;
+    border-radius: 360px;
+}
+.reagan{
+    height: 260px;
+    width: 360px;
+    border-radius: 360px;
+}
+.cleopatra{
+    height: 260px;
+    width: 360px;
+    border-radius: 360px;
+}
+/* .rainha{
+    height: 260px;
+    width: 360px;
+    border-radius: 360px;
+} */
+/* .pedro{
+    height: 190px;
+    width: 360px;
+    border-radius: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.napoleão{
+    height: 300px;
+    width: 360px;
+    border-radius: 400px;
+} */ 
+.titulo{
+    height: 85vh;
+    width: 55vw;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+}
+.texto{
+    height: 80vh;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.texto span{
+    color: yellow;
+}
+.logo{
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+.logo img{
+    border-radius: 180px;
+}
+.botão{
+    width: 100%;
+    height: 20vh;
+}
+.botões{
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 20vh;
+}
+button{
+    margin-top: 50px;
+    background-color: black;
+    border: solid 2px yellow;
+    color: yellow;  
+}
+button{
+    width: 10vw;
+    height: 5vh;
+    border-radius: 30px;
+}
+/* Começo da parte inferior */
+.parte_inferior{
+    height: 22vh;
+    width: 100%;
+    background-color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-direction: column;
+}
+.parte_inferior h3{
+    margin-top: 90px;
+}
+.parte_inferior span{
+    color:black;
+}
+.container {
+    position: relative;
+}
+.container_pai{
+    width: 50vw;
+    height: 80%;
+    background-color: red;
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    margin: -25px 0 0 -25px;
+    display: none;
+    border-radius: 40px;
+    height: 65vh;
+}
