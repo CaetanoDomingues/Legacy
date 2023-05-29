@@ -14,26 +14,42 @@
     border: solid 1px red;
 }
 .bola_um{
-    width: 300px;
+    width: 320px;
     height: 300px;
     border: solid 1px green;
     border-radius: 50%
 }
 .bola_dois{
-    width: 100px;
-    height: 100px;
+    width: 250px;
+    height: 215px;
     border-radius: 50%;
     border: solid 1px orange;
 
     position: absolute;
-    left: 90px;
-    top: 70px;
+    left: 5px;
+    top: 260px;
 }
 .bola_tres{
     width: 250px;
     height: 250px;
     border-radius: 50%;
     border: solid 1px blue;
+}
+.bola_quatro{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: solid 1px black;
+
+    position: absolute;
+    right: 50%;
+    top: 260px;
+}
+.bola_cinco{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: solid 1px purple;
 }
 /* Canto direito */
 .div-direito{
