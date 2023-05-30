@@ -1,115 +1,164 @@
-@font-face{
+@font-face {
     font-family: Yeseva;
-    src:url(../fontes/YesevaOne-Regular.ttf)
+    src: url(../fontes/YesevaOne-Regular.ttf)
 }
-*{
+
+* {
     margin: 0;
     font-family: Yeseva;
 }
+
 /* Parte superior */
-.div-esquerdo{
+.div-esquerdo {
     display: flex;
     width: 90vw;
-    height: 90vh;
-    border: solid 1px red;
+    height: 100vh;
 }
-.bola_um{
-    width: 320px;
-    height: 300px;
-    border: solid 1px green;
-    border-radius: 50%
-}
-.bola_dois{
-    width: 250px;
-    height: 215px;
-    border-radius: 50%;
-    border: solid 1px orange;
 
+.bola_um {
+    width: 450px;
+    height: 360px;
+    border-radius: 50%;
+    background-image: url(https://www.infoescola.com/wp-content/uploads/2012/07/napoleao-bonaparte.jpg);
+    background-size: cover;
+    
+}
+
+.bola_dois {
+    width: 290px;
+    height: 250px;
+    border-radius: 50%;
+    background-image: url(https://www.infoescola.com/wp-content/uploads/2019/11/Official_Portrait_of_President_Reagan_1981.jpg);
+    background-size: cover;
+    
     position: absolute;
     left: 5px;
     top: 260px;
 }
-.bola_tres{
+
+.bola_tres {
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    border: solid 1px blue;
-}
-.bola_quatro{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: solid 1px black;
+    display: flex;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/6/6f/Portrait_de_Dante.jpg);
+    background-size: cover;
 
     position: absolute;
-    right: 55%;
-    top: 210px;
+    left: 420px;
+    top: 5px;
 }
-.bola_cinco{
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    border: solid 1px purple;
 
-    position:absolute;
-    left: 200px;
+.bola_quatro {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    background-image: url(https://static.todamateria.com.br/upload/cl/eo/cleopatraarainhadoegito-cke.jpg);
+    background-size: cover;
+
+    position: absolute;
+    right: 520px;
+    top: 170px;
+}
+
+.bola_cinco {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-image: url(https://www.walksinsiderome.com/wp-content/uploads/2020/05/Julius-Caesar.jpg);
+    background-size: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: -150px;
+
+    position: absolute;
+    left: 250px;
     top: 160px
 }
+
 /* Canto direito */
-.div-direito{
+.div-direito {
     width: 45vw;
-    height: 90vh;
+    height: 100vh;
     /* border: solid 1px blue; */
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
 }
-.organizar-divs{
+
+.organizar-divs {
     display: flex;
     width: 100%;
     height: 100%;
 }
-.div-logo{
+
+.div-logo {
     width: 100%;
     height: 100%;
-    border: solid 1px yellow;
-    margin-top: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
-.btn{
+
+.btn {
     width: 100%;
-    height: 45.2vh;
-    border: solid 1px orange;
+    height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    justify-content: space-evenly;
+    align-items: center;
 }
-button{
-    height: 8vh;
-    border-radius: 15px;
-    background-color: yellow;
-    border-color: yellow;
+
+button {
+    height: 25%;
+    width: 33.5vw;
+    border-radius: 20px;
+    background-color: #F4C507;
+    border-color: #F4C507;
+    font-size: 20px;
 }
-img{
+
+img {
     display: flex;
     height: 45vh;
 }
-.div-logo span{
-    color:yellow;
+
+.div-logo span {
+    color: #F4C507;
     font-size: 30px
 }
-.div-logo p{
-    margin: auto; 
-    font-size: 20px;
+
+.div-logo p {
+    margin: auto;
+    font-size: 28px;
 }
+
 /* Parte inferior */
-.footer{
-    width: 98.7vw;
+.footer {
+    width: 100%;
+    height: 10vh;
+    background-color: #F4C507;
+}
+/* Telas de cadastro e login */
+#cadastro{
+    display: flex;
+    background-color: #F4C507;
+    border-radius: 20px;
+    width: 30vw;
+    height: 45vh;
+    position: absolute;
+    left: 450px;
+    top: 60px;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+#cad_int{
+    width: 15vw;
     height: 20vh;
-    background-color: yellow;
+    background-color: #ffff;
+    border-radius: 20px;
+
 }
