@@ -20,6 +20,8 @@
     height: 360px;
     border-radius: 50%;
     background-image: url(https://www.infoescola.com/wp-content/uploads/2012/07/napoleao-bonaparte.jpg);
+    background-color: #F4C507;
+    background-blend-mode: luminosity;
     background-size: cover;
     
 }
@@ -30,7 +32,8 @@
     border-radius: 50%;
     background-image: url(https://www.infoescola.com/wp-content/uploads/2019/11/Official_Portrait_of_President_Reagan_1981.jpg);
     background-size: cover;
-    
+    background-color: #F4C507;
+    background-blend-mode: luminosity;
     position: absolute;
     left: 5px;
     top: 260px;
@@ -43,7 +46,8 @@
     display: flex;
     background-image: url(https://upload.wikimedia.org/wikipedia/commons/6/6f/Portrait_de_Dante.jpg);
     background-size: cover;
-
+    background-blend-mode: luminosity;
+    background-color: #F4C507;
     position: absolute;
     left: 420px;
     top: 5px;
@@ -55,7 +59,8 @@
     border-radius: 50%;
     background-image: url(https://static.todamateria.com.br/upload/cl/eo/cleopatraarainhadoegito-cke.jpg);
     background-size: cover;
-
+    background-color: #F4C507;
+    background-blend-mode: luminosity;
     position: absolute;
     right: 520px;
     top: 170px;
@@ -70,6 +75,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: -150px;
+    background-color: #F4C507;
+    background-blend-mode: luminosity;
 
     position: absolute;
     left: 250px;

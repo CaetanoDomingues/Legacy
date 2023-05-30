@@ -16,15 +16,7 @@
         <div class="bola_tres"></div>
         <div class="bola_quatro"></div>
         <div class="bola_cinco"></div>
-      </div>
-      <!-- Card de pop-up -->
-      <div class="card_cadastro" id="cadastro">
-        <div id="cad_titulo">
-          <h2>Cadastro</h2>
-        </div>
-        <div id="cad_int"></div>
-      </div>
-      <!-- Card de pop-up -->
+      </div>   
       <div class="div-direito">
         <div class="div-logo">
           <img src="../img/Logo_definitiva.png" alt="Logo" />
@@ -32,8 +24,8 @@
           <span>história</span>
         </div>
         <div class="btn">
-          <button onclick="FazerLogin()">Login</button>
-          <br />
+         <button onclick="FazerLogin()">Login</button>
+          <br>
           <button onclick="FazerCadastro()">Cadastro</button>
         </div>
       </div>
@@ -41,10 +33,11 @@
     <div class="footer"></div>
   </body>
 </html>
-
 <script>
-    cadastro.style.display = 'none';
-  function FazerCadastro() {
-    cadastro.style.display = 'block';
+  function FazerLogin(){
+    location.href = 'TelaLogin.html'
+  } 
+  function FazerCadastro(){
+    location.href = 'TelaCadastro.html'
   }
 </script>
