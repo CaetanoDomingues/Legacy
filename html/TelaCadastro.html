@@ -6,8 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href=../css/TelaCadastro.css>
+    <link rel="icon" href="/Legacy/img/Logo_definitiva.png" />
 </head>
 <body>
+    <!-- Inserindo o pop-up de erro -->
+    <div class="card_erro" id="cardErro">
+        <span id="mensagem_erro"></span>
+      </div>
+<!-- Começo da div de cadastro -->
    <div class="cadastro">
     <div class="div-titulo">
         <h2>
@@ -42,3 +48,33 @@
    </div> 
 </body>
 </html>
+
+<script>
+    function Cadastro(){
+        aguardar();
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nome = ipt_nome.value;
+    var email = ipt_email.value;
+    var senha = ipt_senha.value;
+    var confirmacao = ipt_confirmar.value;
+
+    if (
+      nome == "" ||
+      email == "" ||
+      senha == "" ||
+      confirmar== ""
+    ) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Mensagem de erro para todos os campos em branco)";
+
+      finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+
+    }
+</script>

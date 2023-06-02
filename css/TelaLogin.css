@@ -8,8 +8,9 @@
     font-family: Yeseva;
 }
 body{
-    background-image: url(https://img.imageboss.me/revista-cdn/cdn/25547/e98d18819becd5b9579df6f9ef493b74d4338c43.jpg?1575465612);
+    background-image: url(https://static.todamateria.com.br/upload/ba/st/bastilha-cke.jpg);
     background-size: cover;
+    background-position-y: -280px;
     background-blend-mode: luminosity;
     background-color: #604e06;
 }
@@ -19,7 +20,7 @@ body{
     background-color: #F4C507;
     border-radius: 20px;
     width: 30vw;
-    height: 80vh;
+    height: 55vh;
     border: solid 1px yellow;
     position: absolute;
     left: 450px;
@@ -30,7 +31,7 @@ body{
 }
 .div-int{
     width: 25vw;
-    height: 67vh;
+    height: 40vh;
     background-color:#ffff;
     border-radius: 20px;
     border: solid 1px white;
@@ -42,6 +43,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
 }
 .campos input{
     width: 85%;
