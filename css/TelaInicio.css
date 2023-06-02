@@ -128,8 +128,8 @@ button {
 }
 
 img {
-    display: flex;
-    height: 45vh;
+    width: 80vw;
+    height: 100%;
 }
 
 .div-logo span {
