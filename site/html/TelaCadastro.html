@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href=../css/TelaCadastro.css>
+    <link rel="icon" href="/Legacy/img/Logo_definitiva.png" />
+</head>
+<body>
+    <!-- Inserindo o pop-up de erro -->
+    <div class="error" id="cardErro">
+        <p id="mensagem_erro"></p>
+      </div>
+<!-- Começo da div de cadastro -->
+   <div class="cadastro">
+    <div class="div-titulo">
+        <h2>
+        Cadastro
+        </h2>
+    </div>
+    <div class="div-int">
+        <div class="campos">
+            <h2>
+                Nome
+            </h2>
+            <input type="text" id="ipt_nome">
+            <h2>
+                E-mail
+            </h2>
+            <input type="text" id="ipt_email">
+            <h2>
+              Celular
+            </h2>
+            <input type="text" id="ipt_celular">
+            <h2>
+                Senha
+            </h2>
+            <input type="text" id="ipt_senha">
+            <h2>
+                Confirmar senha
+            </h2>
+            <input type="text" id="ipt_confirmar">
+        </div>
+        <div class="btn-cad">
+            <button>
+                Cadastrar
+            </button>
+        </div>
+    </div>
+   </div> 
+</body>
+</html>
+
+<script>
+    function Cadastro(){
+        aguardar();
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nome = ipt_nome.value;
+    var email = ipt_email.value;
+    var senha = ipt_senha.value;
+    var confirmacao = ipt_confirmar.value;
+    var celular = ipt_celular.value
+
+    if (
+      nome == "" ||
+      email == "" ||
+      senha == "" ||
+      confirmar== "" 
+    ) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Não deixe nenhum campo em branco)";
+
+      finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nomeVar,
+        emailServer: emailVar,
+        senhaServer: senhaVar,ssssssssssssssssssssssssssssss                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+        // celularServer: celularVar
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          cardErro.style.display = "block";
+
+          mensagem_erro.innerHTML =
+            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+          setTimeout(() => {
+            window.location = "TelaLogin.html";
+          }, "2000");
+
+          limparFormulario();
+          finalizarAguardar();
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+      });
+
+    return false;
+  }
+
+  function sumirMensagem() {
+    cardErro.style.display = "none";
+  }
+    
+</script>
