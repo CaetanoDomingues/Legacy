@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href=../css/TelaCadastro.css>
-    <link rel="icon" href="/Legacy/img/Logo_definitiva.png" />
+    <link rel="icon" href="/Legacy/img/Logo_definitiva.png"/>
+    <script src="../js/sessao.js"></script>
+
 </head>
 <body>
     <!-- Inserindo o pop-up de erro -->
-    <div class="error" id="cardErro">
-        <p id="mensagem_erro"></p>
+    <div class="alerta_erro">
+      <div class="card_erro" id="cardErro">
+          <span id="mensagem_erro"></span>
       </div>
+  </div>
 <!-- Começo da div de cadastro -->
    <div class="cadastro">
     <div class="div-titulo">
@@ -33,11 +37,11 @@
             <h2>
                 Senha
             </h2>
-            <input type="text" id="ipt_senha">
+            <input type="password" id="ipt_senha" placeholder="******">
             <h2>
                 Confirmar senha
             </h2>
-            <input type="text" id="ipt_confirmar">
+            <input type="password" id="ipt_confirmar" placeholder="******">
         </div>
         <div class="btn-cad">
             <button>
@@ -69,13 +73,17 @@
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
         "(Não deixe nenhum campo em branco)";
+    if (confirmacao != senha) {
+     cardErro.style.display = "block";
+     mensagem_erro.innerHTML = "A confirmação deve ser igual a senha" 
+    }
 
       finalizarAguardar();
       return false;
     } else {
       setInterval(sumirMensagem, 5000);
     }
-    fetch("/usuarios/cadastrar", {
+    fetch("/usuario/cadastrar", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -98,7 +106,7 @@
             "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
           setTimeout(() => {
-            window.location = "login.html";
+            window.location = "TelaLogin.html";
           }, "2000");
 
           limparFormulario();

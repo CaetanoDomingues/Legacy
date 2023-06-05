@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mural de conversas</title>
+    <link rel="icon" href="/Legacy/site/public/img/Logo_definitiva.png">
+    <link rel="stylesheet" href="/Legacy/site/public/css/mural.css">
+    <script src="../js/sessao.js"></script>
+</head>
+<body>
+    <header>
+        <button onclick="conversar()">
+                 <p>Mural de conversas</p>
+             </div>
+        </button>
+        <button onclick="home()">
+                <p>Home</p>
+            </div>
+        </button>
+        <div class="topico-header"></div>
+    </header>
+    <div class="container">
+        <div class="titulo">
+            <p>Conversas</p>
+        </div>
+        <div class="comentario">
+            <div class="perfil"></div>
+            <div class="filho"></div>
+        </div>
+    </div>
+    <div class="footer"></div>
+</body>
+
+</html>
+
+<script>
+     function conversar(){
+        location.href = 'mural.html'
+      }
+      function home(){
+        location.href = 'home.html'
+      }
+</script>

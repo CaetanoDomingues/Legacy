@@ -7,8 +7,17 @@
     <title>Login</title>
     <link rel="icon" href="/Legacy/img/Logo_definitiva.png" />
     <link rel="stylesheet" href=../css/TelaLogin.css>
+    <script src="../js/sessao.js"></script>
+
 </head>
 <body>
+     <!-- Inserindo o pop-up de erro -->
+     <div class="alerta_erro">
+        <div class="card_erro" id="cardErro">
+            <span id="mensagem_erro"></span>
+        </div>
+        
+    </div>
     <div class="cadastro">
         <div class="div-titulo">
             <h2>
@@ -18,9 +27,9 @@
         <div class="div-int">
             <div class="campos">
                 <h2>
-                    Nome
+                    Email
                 </h2>
-                <input type="text" id="ipt_nome">
+                <input type="text" id="ipt_email">
                 
                     Senha
                 </h2>
@@ -36,3 +45,71 @@
        </div>  
 </body>
 </html>
+<script>
+    function entrar() {
+        aguardar();
+
+        var emailVar = ipt_email.value;
+        var senhaVar = ipt_senha.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+
+                    setTimeout(function () {
+                        window.location = "home.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+</script>

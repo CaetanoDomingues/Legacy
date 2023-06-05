@@ -1,0 +1,119 @@
+@font-face {
+    font-family: Yeseva;
+    src: url(../fontes/YesevaOne-Regular.ttf)
+}
+*{
+    font-family: Yeseva;
+    margin: 0;
+}
+#regions_div{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header{
+    height: 20vh;
+    width: 100%;
+    background-color: #F4C507;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.topico-header{
+width: 25%;
+height: 10vh;
+background-color: white;
+border-radius: 30px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.topico-header p{
+    font-size: 25px;
+}
+button{
+    width: 30%;
+    height: 10vh;
+    border-radius: 30px;
+    background-color: white;
+    border-color: white;
+    cursor: pointer;
+}
+button p{
+    font-size: 25px;
+}
+.mapa{
+    height: 85vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+}
+.painel{
+    height:30vh;
+    width: 100%;
+    background-color: #F4C507;
+}
+.btn{
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.btn-controll{
+    height: 15vh;
+    width: 20%;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-controll p{
+    font-size: 18px;
+}
+.container{
+    height: 85vh;
+    width: 100%;
+    margin-top: 30px;
+}
+.container-filho{
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 15px;
+}
+.coluna{
+    height: 55vh;
+    width: 25%;
+    margin: auto;
+    margin-bottom: 200px;
+    background-color: #F4C507;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+}
+.titulo{
+    height: 15vh;
+    width: 35%;
+    background-color: #F4C507;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.titulo p{
+    font-size: 18px;
+}
+.footer{
+    height: 35vh;
+    width: 100%;
+    background-color: #F4C507;
+}
