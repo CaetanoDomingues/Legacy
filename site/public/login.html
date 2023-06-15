@@ -7,8 +7,6 @@
     <title>Login</title>
     <link rel="icon" href="/Legacy/img/Logo_definitiva.png" />
     <link rel="stylesheet" href=../css/TelaLogin.css>
-    <script src="../js/sessao.js"></script>
-
 </head>
 <body>
      <!-- Inserindo o pop-up de erro -->
@@ -37,7 +35,7 @@
                 
             </div>
             <div class="btn-cad">
-                <button>
+                <button onclick="entrar()">
                     Entrar
                 </button>
             </div>
@@ -47,7 +45,6 @@
 </html>
 <script>
     function entrar() {
-        aguardar();
 
         var emailVar = ipt_email.value;
         var senhaVar = ipt_senha.value;
@@ -58,14 +55,11 @@
             finalizarAguardar();
             return false;
         }
-        else {
-            setInterval(sumirMensagem, 5000)
-        }
 
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
 
-        fetch("/usuarios/autenticar", {
+        fetch("/usuario/autenticar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -96,10 +90,10 @@
 
                 console.log("Houve um erro ao tentar realizar o login!");
 
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    finalizarAguardar(texto);
-                });
+                // resposta.text().then(texto => {
+                //     console.error(texto);
+                //     // finalizarAguardar(texto);
+                // });
             }
 
         }).catch(function (erro) {
@@ -109,7 +103,7 @@
         return false;
     }
 
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
+    // function sumirMensagem() {
+    //     cardErro.style.display = "none"
+    // }
 </script>

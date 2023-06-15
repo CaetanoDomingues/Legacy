@@ -1,9 +1,9 @@
 var usuarioModel = require("../model/usuarioModel");
 
-function autenticar(req, res) {
+function entrar(req, res) {
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
-    var nome = req.body.nomeServer
+    // var nome = req.body.nomeServer
 
     if (email == undefined) {
         res.status(400).send("Seu email está undefined!");
@@ -11,7 +11,7 @@ function autenticar(req, res) {
         res.status(400).send("Sua senha está indefinida!");
     } else {
         
-        usuarioModel.entrar(nome,email,senha)
+        usuarioModel.entrar(email,senha)
             .then(
                 function (resultado) {
                     console.log(`\n Resultados encontrados: ${resultado.length}`);
@@ -41,7 +41,6 @@ function cadastrar(req, res) {
     var nome = req.body.nomeServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
-    var celular = req.body.celularServer
 
     // Faça as validações dos valores
     if (nome == undefined) {
@@ -71,6 +70,6 @@ function cadastrar(req, res) {
     }
 }
 module.exports = {
-    autenticar,
+    entrar,
     cadastrar
 }
