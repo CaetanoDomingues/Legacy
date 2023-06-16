@@ -80,6 +80,9 @@
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
 
+                    cardErro.style.display = 'block'
+                    mensagem_erro.innerHTML = `Bem vindo ao Legacy ${json.nome}`
+
                     setTimeout(function () {
                         window.location = "home.html";
                     }, 1000); // apenas para exibir o loading
