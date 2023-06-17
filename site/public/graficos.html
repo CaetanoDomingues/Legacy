@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráficos</title>
+    <link rel="stylesheet" href="/Legacy/site/public/css/graficos.css">
+    <link rel="icon" href="./img/Logo_definitiva.png  ">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="header_h1">
+           <h1 onclick="VerGrafico()">Gráficos</h1>
+           <h1 onclick="VerHome()">Home</h1>
+           <h1 onclick="VerLer()">Ler sobre</h1>
+        </div> 
+     </div>
+     <div class="container">
+        <div class="container_esquerda">
+                <div>
+                    <canvas id="myChart_left"></canvas>
+                </div>
+        </div>
+            <div class="container_direita">
+                <div>
+                    <canvas id="myChart_right"></canvas>
+                  </div>
+            </div>  
+     </div>
+     
+        <div class="footer"></div>
+</body>
+</html>
+
+<script>
+    function VerGrafico(){
+      location.href = 'graficos.html'
+    }
+    function VerHome(){
+        location.href = 'home.html'
+      }
+    function VerLer(){
+          location.href = 'ler.html'
+        }
+
+    const ctx = document.getElementById('myChart_right');
+
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Pergunta 1', 'Pergunta 2', 'Pergunta 3', 'Pergunta 4', 'Pergunta 5', 'Pergunta 6',
+'Pergunta 7', 'Pergunta 8','Pergunta 9','Pergunta 10','Pergunta 11','Pergunta 12', 'Pergunta 13', 'Pergunta 14', 'Pergunta 15'],
+    datasets: [{
+      label: '# of Votes',
+      data: [12, 19, 3, 5, 2, 3],
+      borderWidth: 1
+    },]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+
+const vtx = document.getElementById('myChart_left');
+
+new Chart(vtx, {
+  type: 'pie',
+  data: {
+    labels: ['Acertos', 'Erros'],
+    datasets: [{
+      label: '',
+      data: [12, 19],
+      borderWidth: 0
+    }]
+  },
+  options: {
+    scales: {
+    
+    }
+  }
+});
+</script>

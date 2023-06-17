@@ -6,114 +6,65 @@
     font-family: Yeseva;
     margin: 0;
 }
-#regions_div{
-    height: 80vh;
+.header{
     width: 100%;
-    display: flex;
-    margin: auto;
+    height: 15vh;
+    border: solid 1px #F4C507;
     display: flex;
     justify-content: center;
-    align-items: center;
-}
-header{
-    height: 20vh;
-    width: 100%;
     background-color: #F4C507;
+}
+.header_h1{
+    width: 80%;
+    height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-evenly;
 }
-.topico-header{
-width: 25%;
-height: 10vh;
-background-color: white;
-border-radius: 30px;
-display: flex;
-justify-content: center;
-align-items: center;
-}
-.topico-header p{
-    font-size: 25px;
-}
-button{
-    width: 30%;
-    height: 10vh;
-    border-radius: 30px;
-    background-color: white;
-    border-color: white;
+h1{
+    font-size: 280%;
     cursor: pointer;
 }
-button p{
-    font-size: 25px;
-}
-.mapa{
-    height: 85vh;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    border-radius: 40px;
-}
-.painel{
-    height:30vh;
-    width: 100%;
-    background-color: #F4C507;
-}
-.btn{
-    height: 30vh;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-.btn-controll{
-    height: 15vh;
-    width: 20%;
-    background-color: white;
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.btn-controll p{
-    font-size: 18px;
-}
+
 .container{
-    height: 85vh;
-    width: 100%;
-    margin-top: 30px;
+    margin: 20px;
 }
-.container-filho{
-    height: 90vh;
-    width: 100%;
+.divisoria{
+    width: 95vw;
+    height: 50%;
+    border: solid 1px #F4C507;
+}
+.div{
     display: flex;
-    justify-content: space-evenly;
-    margin-top: 15px;
+    justify-content:center;
+    margin: 20px;
 }
-.coluna{
-    height: 55vh;
-    width: 25%;
-    margin: auto;
-    margin-bottom: 200px;
-    background-color: #F4C507;
+.container_banner{
+    width: 80%;
+    height: 70vh;
+    border: solid 1px ;
     border-radius: 30px;
-    display: flex;
-    justify-content: center;
+    background-image: url(/Legacy/site/public/img/fundo_quiz.jpg);
+    background-size: cover;
 }
-.titulo{
-    height: 15vh;
-    width: 35%;
-    background-color: #F4C507;
+.quiz{
+    width: 58%;
+    height: 20vh;
+    border: solid 1px #F4C507;
+    margin: 45px;
     border-radius: 30px;
+    background-color: #F4C507;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
-.titulo p{
-    font-size: 18px;
+h2{
+    font-size: 200%;
 }
 .footer{
-    height: 35vh;
     width: 100%;
+    height: 10vh;
+    border: solid 1px #F4C507;
     background-color: #F4C507;
 }
