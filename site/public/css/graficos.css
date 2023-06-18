@@ -38,13 +38,21 @@ h1{
     margin: 12px;
     width: 35%;
     height: 80vh;
-    border: solid 1px blue;
+    border: dashed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .container_direita{
     margin: 12px;
     width: 65%;
     height: 80vh;
-    border: solid 1px red;
+    border: dashed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .footer{
     width: 100%;

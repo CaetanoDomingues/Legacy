@@ -18,13 +18,19 @@
      </div>
      <div class="container">
         <div class="container_esquerda">
+          <div class="tittle">
+            <h2>Desempenho individual</h2>
+          </div>
                 <div>
-                    <canvas id="myChart_left"></canvas>
+                    <canvas id="myChart_left" style="height: 70vh;width: 100%;"></canvas>
                 </div>
         </div>
             <div class="container_direita">
+              <div class="title">
+                <h2>Desempenho dos usuários</h2>
+              </div>
                 <div>
-                    <canvas id="myChart_right"></canvas>
+                    <canvas id="myChart_right" style="height: 70vh;width: 100%;"></canvas>
                   </div>
             </div>  
      </div>
@@ -77,16 +83,13 @@ const vtx = document.getElementById('myChart_left');
 new Chart(vtx, {
   type: 'pie',
   data: {
-    labels: ['Acertos', 'Erros'],
+    labels: ['Colors'],
     datasets: [{
       data: [12, 19],
       borderWidth: 0,
-    }]
-  },
-  options: {
-    scales: {
-    
-    }
+      backgroundColor: ['#00BF63','#FF3131'] 
+    }],
+    labels: ['Acertos', 'Erros'],
   }
 });
 </script>
