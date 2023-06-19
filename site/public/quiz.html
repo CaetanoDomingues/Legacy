@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="./img/Logo_definitiva.png  ">
+    <link rel="stylesheet" href="./css/quiz.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header_h1">
+           <h1 onclick="VerGrafico()">Gráficos</h1>
+           <h1 onclick="VerHome()">Home</h1>
+           <h1 onclick="VerLer()">Ler sobre</h1>
+        </div> 
+     </div>
+    <div class="numeracao">
+      <div class="pergunta_number">
+        <h2>Pergunta Um</h2>
+      </div>
+    </div>
+     <div class="container">
+      <div class="tittle">
+        <div class="numero">
+          <h2>1.</h2>
+        </div>
+          <div class="pergunta">
+            <h2>Quando começou a primeira guerra mundial?
+            </h2>
+          </div>
+        </div>
+        <div class="escolha">
+          <div class="btn-esquerdo">
+            <div class="btn">
+              <h2>1910</h2>
+            </div>
+            <div class="btn">
+              <h2>1912</h2>
+            </div>
+          </div>
+            <div class="btn-direito">
+              <div class="btn">
+                <h2>1908</h2>
+              </div>
+              <div class="btn">
+                <h2>1914</h2>
+              </div>
+            </div>
+      </div>
+     </div>
+    <div class="footer"></div>
+</body>
+</html>
+<script>
+    function VerGrafico(){
+      location.href = 'graficos.html'
+    }
+    function VerHome(){
+        location.href = 'home.html'
+      }
+    function VerLer(){
+          location.href = 'ler.html'
+        }
+</script>

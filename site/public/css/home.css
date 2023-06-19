@@ -44,7 +44,7 @@ h1{
     height: 70vh;
     border: solid 1px ;
     border-radius: 30px;
-    background-image: url(/Legacy/site/public/img/fundo_quiz.jpg);
+    background-image: url(../img/fundo_quiz.jpg);
     background-size: cover;
 }
 .quiz{

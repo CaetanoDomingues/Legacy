@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="/Legacy/site/public/css/home.css">
+    <link rel="stylesheet" href="./css/home.css">
     <link rel="icon" href="./img/Logo_definitiva.png  ">
 </head>
 <body>
@@ -17,14 +17,13 @@
   </div>
       <div class="container">
           <div class="header_container">
-            <h3>
-              Olá, Caetano
+            <h3 id="usuario_texto">
             </h3>
           </div>
             <div class="divisoria"></div>
               <div class="div">
                 <div class="container_banner">
-                  <div class="quiz">
+                  <div class="quiz" onclick="VerQuiz()">
                     <h2>
                       Responda 15 questões de história
                     </h2>
@@ -46,4 +45,9 @@
     function VerLer(){
           location.href = 'ler.html'
         }
+    function VerQuiz(){
+          location.href = 'quiz.html'
+    }
+    usuario_texto.innerHTML = `Olá, ${sessionStorage.NOME_USUARIO}`
+
 </script>
