@@ -18,41 +18,39 @@
      <div class="div">
         <div class="select">
           <h2>Selecione o país desejado</h2>
-          <select id="SelectPais" onchange=""></select>
+          <select id="SelectPais" onchange="TrocarPais()">
+            <option value="nenhum"></option>
+            <option value="frances">França</option>
+            <option value="brasileiro">Brasil</option>
+            <option value="italiano">Itália</option>
+            <option value="americano">Estados Unidos</option>
+            <option value="egipcio">Egito</option>
+          </select>
          
         </div>
-          <div class="bandeira">
-              <img src="./img/Flag_of_France.png" alt="">
+          <div class="bandeira" id="bandeira_pais">
+              <!-- <img src="./img/Flag_of_France.png"> -->
           </div>
      </div>
       <div class="container">
           <div class="container_esquerda">
             <div class="tittle">
-              <h2 id="historia_titulo"><u>História da França</u></h2>
+              <h2 id="historia_titulo"><u></u></h2>
             </div>
-              <p id="historia_resumo">A história da França é rica e diversificada, com um legado que remonta a milhares de anos. A região que hoje conhecemos como França foi habitada por grupos celtas e gauleses antes da conquista romana no século I a.C. Durante a dominação romana, a região da Gália prosperou e desenvolveu-se economicamente.
-                Após o declínio do Império Romano, a França passou por uma série de invasões bárbaras e disputas de poder. No século V, os francos, um povo germânico, estabeleceram-se na região e fundaram o Reino dos Francos, que se expandiu sob o comando de líderes como Carlos Magno.
-                Durante a Idade Média, a França viveu um período conturbado de conflitos e guerras, como as Guerras Capetianas e a Guerra dos Cem Anos contra a Inglaterra. A monarquia francesa consolidou seu poder, e o país viu o surgimento de dinastias poderosas, como os Valois e, mais tarde, os Bourbon.
-                O século XVIII foi um período crucial na história francesa, marcado pela Iluminismo e pela Revolução Francesa. A França passou por uma profunda transformação política e social, com a queda da monarquia e a ascensão da Primeira República. A Revolução Francesa teve um impacto duradouro na história mundial, inspirando ideais de liberdade, igualdade e fraternidade.
-                O século XIX foi caracterizado por períodos de turbulência política, como o período napoleônico, no qual Napoleão Bonaparte ascendeu ao poder e expandiu o território francês através de conquistas militares. Após a queda de Napoleão, a monarquia foi restaurada, mas enfrentou desafios com a crescente demanda por liberdade e democracia.
-                O século XX trouxe à França duas guerras mundiais devastadoras. Durante a Primeira Guerra Mundial, a França foi um dos principais campos de batalha e sofreu enormes perdas. Durante a Segunda Guerra Mundial, o país foi ocupado pelas forças nazistas até sua libertação em 1944.
-                Após a guerra, a França passou por um período de reconstrução e estabeleceu-se como uma das principais potências europeias. O país foi um dos membros fundadores da União Europeia e desempenhou um papel fundamental na integração europeia.
-                Hoje, a França é conhecida por sua cultura rica, seu patrimônio histórico, sua gastronomia e sua influência na moda e nas artes. Paris, a capital francesa, é um importante centro cultural e turístico, abrigando renomados museus como o Louvre e pontos icônicos como a Torre Eiffel.
-                A história da França é um testemunho de sua resiliência, lutas políticas e contribuições significativas para o desenvolvimento cultural e político da Europa e do mundo.</p>
+              <p id="historia_resumo"></p>
           </div>
             <div class="container_direita">
-              <div class="superior">
-                <img src="https://www.infoescola.com/wp-content/uploads/2012/07/napoleao-bonaparte.jpg" id="imagem_figura">
+              <div class="superior" id="imagem_figura">
+                <!-- <img src="https://www.infoescola.com/wp-content/uploads/2012/07/napoleao-bonaparte.jpg"> -->
               </div>
                 <div class="inferior">
                   <div class="frase">
                     <p id="frase_historica">
-                      "Liberté, égalité, fraternité"
                     </p>
                   </div>
                     <div class="curiosidade">
                       <u><h3>Curiosidade</h3></u>
-                        <span>A França é que o país é o destino turístico mais popular do mundo. A cada ano, milhões de pessoas visitam a França para explorar seus diversos atrativos, como a Torre Eiffel, o Louvre, a Catedral de Notre-Dame, a Riviera Francesa, os castelos do Vale do Loire, entre outros.</span>
+                        <span id="pais_curiosidade"></span>
                     </div>
                 </div>
             </div>
@@ -71,4 +69,95 @@
     function VerLer(){
           location.href = 'ler.html'
         }
+    function TrocarPais(){
+      const paisSelecionado = document.getElementById("SelectPais");
+      const paisEscolhido = paisSelecionado.value
+
+      if(paisEscolhido == "frances"){
+        bandeira_pais.innerHTML = `<img src="./img/Flag_of_France.png">`;
+        historia_titulo.innerHTML = `<u>História da França</u>`;
+        historia_resumo.innerHTML = `A história da França é rica e diversificada, com um legado que remonta a milhares de anos. A região que hoje conhecemos como França foi habitada por grupos celtas e gauleses antes da conquista romana no século I a.C. Durante a dominação romana, a região da Gália prosperou e desenvolveu-se economicamente.
+                Após o declínio do Império Romano, a França passou por uma série de invasões bárbaras e disputas de poder. No século V, os francos, um povo germânico, estabeleceram-se na região e fundaram o Reino dos Francos, que se expandiu sob o comando de líderes como Carlos Magno.
+                Durante a Idade Média, a França viveu um período conturbado de conflitos e guerras, como as Guerras Capetianas e a Guerra dos Cem Anos contra a Inglaterra. A monarquia francesa consolidou seu poder, e o país viu o surgimento de dinastias poderosas, como os Valois e, mais tarde, os Bourbon.
+                O século XVIII foi um período crucial na história francesa, marcado pela Iluminismo e pela Revolução Francesa. A França passou por uma profunda transformação política e social, com a queda da monarquia e a ascensão da Primeira República. A Revolução Francesa teve um impacto duradouro na história mundial, inspirando ideais de liberdade, igualdade e fraternidade.
+                O século XIX foi caracterizado por períodos de turbulência política, como o período napoleônico, no qual Napoleão Bonaparte ascendeu ao poder e expandiu o território francês através de conquistas militares. Após a queda de Napoleão, a monarquia foi restaurada, mas enfrentou desafios com a crescente demanda por liberdade e democracia.
+                O século XX trouxe à França duas guerras mundiais devastadoras. Durante a Primeira Guerra Mundial, a França foi um dos principais campos de batalha e sofreu enormes perdas. Durante a Segunda Guerra Mundial, o país foi ocupado pelas forças nazistas até sua libertação em 1944.
+                Após a guerra, a França passou por um período de reconstrução e estabeleceu-se como uma das principais potências europeias. O país foi um dos membros fundadores da União Europeia e desempenhou um papel fundamental na integração europeia.
+                Hoje, a França é conhecida por sua cultura rica, seu patrimônio histórico, sua gastronomia e sua influência na moda e nas artes. Paris, a capital francesa, é um importante centro cultural e turístico, abrigando renomados museus como o Louvre e pontos icônicos como a Torre Eiffel.
+                A história da França é um testemunho de sua resiliência, lutas políticas e contribuições significativas para o desenvolvimento cultural e político da Europa e do mundo.`;
+        pais_curiosidade.innerHTML = `A França é que o país é o destino turístico mais popular do mundo. A cada ano, milhões de pessoas visitam a França para explorar seus diversos atrativos, como a Torre Eiffel, o Louvre, a Catedral de Notre-Dame, a Riviera Francesa, os castelos do Vale do Loire, entre outros.`;
+        frase_historica.innerHTML = `"Liberté, égalité, fraternité"`
+        imagem_figura.innerHTML = `<img src="https://www.infoescola.com/wp-content/uploads/2012/07/napoleao-bonaparte.jpg">`
+      }
+      if(paisEscolhido == "brasileiro"){
+        bandeira_pais.innerHTML = `<img src="https://static.todamateria.com.br/upload/ba/nd/bandeira-do-brasil-og.jpg">`;
+        historia_titulo.innerHTML = `<u>História do Brasil</u>`;
+        historia_resumo.innerHTML = `A história do Brasil remonta a milhares de anos, quando o território era habitado por povos indígenas. Em 1500, o navegador português Pedro Álvares Cabral chegou ao Brasil, iniciando o processo de colonização pelos portugueses.
+Durante o período colonial, o Brasil foi uma colônia de exploração, com destaque para a produção de açúcar e a utilização da mão de obra escrava africana. No século XVIII, a descoberta de ouro nas regiões de Minas Gerais impulsionou a economia e atraiu uma intensa migração de pessoas.
+Em 1822, o Brasil proclamou sua independência, tornando-se um Império e estabelecendo uma monarquia. Durante o período imperial, o país passou por diversas transformações, como a Guerra do Paraguai e a luta pela abolição da escravidão.
+Em 1889, a monarquia foi substituída pela República, e o Brasil se tornou uma república federativa. Durante a República Velha, o país enfrentou desafios políticos e sociais, com o predomínio das oligarquias cafeeiras e um sistema marcado por fraudes eleitorais.
+A era Vargas, com os governos de Getúlio Vargas, trouxe mudanças significativas, incluindo reformas trabalhistas e sociais. Após um período de ditadura militar que durou de 1964 a 1985, o Brasil passou por um processo de redemocratização e estabeleceu um sistema democrático.
+Ao longo de sua história, o Brasil enfrentou desafios, como a desigualdade social, problemas políticos e econômicos, além de questões ambientais e sociais. No entanto, o país também possui uma rica diversidade cultural, é conhecido por suas belezas naturais e tem sido um importante ator global.
+Hoje, o Brasil é a maior economia da América Latina e desempenha um papel significativo no cenário internacional. Sua história é marcada pela miscigenação étnica, pela influência de diferentes culturas e pelo contínuo processo de construção da identidade nacional.
+`;
+        pais_curiosidade.innerHTML = `O Brasil é que o país abriga a maior floresta tropical do mundo, a Floresta Amazônica. Ela se estende por nove países da América do Sul, mas a maior parte está localizada dentro do território brasileiro. A Amazônia é conhecida por sua biodiversidade incrível e ainda a região desempenha um papel fundamental na regulação do clima global.`;
+        frase_historica.innerHTML = `"Serenamente dou o primeiro passo no caminho da eternidade e saio da vida para entrar na História"`
+        imagem_figura.innerHTML = `<img src="https://agendabonifacio.com.br/wp-content/uploads/2022/10/D.-Pedro-II_-e1664808089659.png">` 
+      }
+      if(paisEscolhido == "italiano"){
+        bandeira_pais.innerHTML = `<img src="https://static.todamateria.com.br/upload/ba/nd/bandeira-da-italia-og.jpg">`;
+        historia_titulo.innerHTML = `<u>História da Itália</u>`;
+        historia_resumo.innerHTML = `A história da Itália remonta a milhares de anos, com raízes profundas na Antiguidade Clássica. A região que hoje conhecemos como Itália foi o berço da civilização romana, que se expandiu e dominou grande parte da Europa Ocidental e do Mediterrâneo.
+Durante o período romano, a Itália foi o centro do poderoso Império Romano, que deixou um legado duradouro em termos de governo, arquitetura, leis e cultura. A cidade de Roma se tornou a capital do império e exerceu uma influência significativa sobre o mundo antigo.
+Após o declínio do Império Romano, a Itália passou por uma série de invasões bárbaras e disputas territoriais. No início da Idade Média, diferentes reinos e estados independentes surgiram na península italiana.
+Durante o Renascimento, a Itália floresceu como um centro cultural e artístico. Cidades como Florença, Veneza e Roma foram os berços de grandes artistas, escritores e pensadores, como Leonardo da Vinci, Michelangelo, Dante Alighieri e Niccolò Machiavelli. O Renascimento italiano foi marcado por uma busca pela excelência nas artes, ciências e humanidades, e teve um impacto significativo no desenvolvimento cultural da Europa.
+No final do século XIX, a Itália passou por um processo de unificação conhecido como o Risorgimento. Diversos estados e reinos foram unificados, resultando na formação do Reino da Itália em 1861. Roma se tornou a capital do país em 1871.
+Durante a Primeira Guerra Mundial, a Itália lutou ao lado das potências aliadas. Após a guerra, o país enfrentou desafios políticos e econômicos, o que levou ao surgimento do fascismo liderado por Benito Mussolini. Mussolini estabeleceu uma ditadura e aliou-se à Alemanha nazista durante a Segunda Guerra Mundial.
+Após a queda do fascismo e a derrota na guerra, a Itália passou por um processo de reconstrução e se tornou uma república democrática em 1946. Desde então, o país se tornou um membro ativo da União Europeia e tem desfrutado de um desenvolvimento econômico e social significativo.
+A história da Itália é marcada por sua rica herança cultural, seus grandes feitos artísticos e literários, bem como seus desafios políticos e transformações ao longo dos séculos. O país é conhecido por sua gastronomia, sua moda de renome mundial e sua influência cultural duradoura.
+`;
+        pais_curiosidade.innerHTML = `Uma curiosidade interessante sobre a Itália é que o país é famoso por sua produção de vinhos. A Itália é um dos maiores produtores de vinho do mundo e possui uma tradição vitivinícola que remonta a milhares de anos. São mais de 20 regiões produtoras de vinho na Itália.`;
+        frase_historica.innerHTML = `"Veni, vidi, vici."`
+        imagem_figura.innerHTML = `<img src="https://www.walksinsiderome.com/wp-content/uploads/2020/05/Julius-Caesar.jpg">` 
+      }
+      if(paisEscolhido == "americano"){
+        bandeira_pais.innerHTML = `<img src="https://static.mundoeducacao.uol.com.br/mundoeducacao/2022/05/bandeira-estados-unidos.jpg">`;
+        historia_titulo.innerHTML = `<u>História dos EUA</u>`;
+        historia_resumo.innerHTML = `A história dos Estados Unidos da América é uma história relativamente recente, mas cheia de eventos marcantes e transformações significativas. A colonização europeia do continente americano teve início no século XVI, quando exploradores e colonizadores europeus começaram a estabelecer assentamentos permanentes.
+A colonização inglesa foi a mais influente e estabeleceu as bases para a formação dos Estados Unidos. No século XVII, as Treze Colônias inglesas começaram a prosperar na região da costa leste, desenvolvendo uma economia baseada na agricultura, com destaque para o cultivo de tabaco, algodão e outros produtos.
+No entanto, as tensões entre as colônias e a Coroa Britânica cresceram ao longo do tempo, especialmente devido à imposição de impostos e restrições comerciais. Isso levou à Revolução Americana, que eclodiu em 1775 e resultou na independência das colônias em relação à Grã-Bretanha. Em 1776, a Declaração de Independência foi assinada, proclamando os ideais de liberdade e igualdade.
+Após a conquista da independência, as colônias se uniram para formar uma nova nação, os Estados Unidos da América. A Constituição dos Estados Unidos foi adotada em 1787, estabelecendo um governo federal e um sistema de governo baseado em princípios democráticos.
+Ao longo dos séculos XIX e XX, os Estados Unidos experimentaram um crescimento rápido e uma série de transformações. O país expandiu seu território através de aquisições, como a compra da Louisiana, a anexação do Texas e a expansão para o Oeste, resultando na famosa "Marcha para o Oeste". Durante o século XIX, a economia americana se desenvolveu rapidamente, com a industrialização e a expansão do sistema ferroviário.
+No entanto, a questão da escravidão levou a profundas divisões no país, culminando na Guerra Civil Americana (1861-1865), um conflito sangrento que resultou na abolição da escravidão e na preservação da União.
+No século XX, os Estados Unidos emergiram como uma potência mundial, desempenhando um papel fundamental nas duas guerras mundiais e na Guerra Fria. O país passou por movimentos sociais importantes, como os direitos civis e o movimento pelos direitos das mulheres, que buscavam garantir a igualdade e a justiça para todos os cidadãos americanos.
+Hoje, os Estados Unidos são uma das maiores economias do mundo e uma potência global influente. Sua história é caracterizada por uma busca contínua por liberdade, igualdade e progresso, moldando não apenas o próprio país, mas também o curso da história mundial.`;
+        pais_curiosidade.innerHTML = ` A versão atual da bandeira, com 50 estrelas representando os 50 estados do país, foi adotada em 4 de julho de 1960, após o Havaí se tornar o último estado a ingressar na União.`;
+        frase_historica.innerHTML = `"Nenhum homem é bom o bastante para governar os outros sem seu consentimento."`
+        imagem_figura.innerHTML = `<img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Official_Portrait_of_President_Reagan_1981.jpg">` 
+      }
+      if(paisEscolhido == "egipcio"){
+        bandeira_pais.innerHTML = `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Egypt.svg/255px-Flag_of_Egypt.svg.png">`;
+        historia_titulo.innerHTML = `<u>História do Egito</u>`;
+        historia_resumo.innerHTML = `A história do Egito é dividida em várias épocas, como o Antigo Império, o Médio Império, o Novo Império e o período Ptolemaico. Durante o Antigo Império, as famosas pirâmides de Gizé foram construídas, incluindo a Grande Pirâmide de Quéops, uma das Sete Maravilhas do Mundo Antigo.
+O Egito Antigo desenvolveu uma sociedade complexa e avançada, com uma estrutura política e religiosa bem estabelecida. Os faraós, que eram considerados divinos, governavam o país e foram responsáveis por construir grandes monumentos e templos, além de promover avanços nas áreas da ciência, da matemática e da arquitetura.
+No entanto, o Egito também passou por períodos de invasões estrangeiras e dominação, como a ocupação persa, a conquista de Alexandre, o Grande, e a subsequente dinastia dos Ptolomeus, de origem grega.
+Um dos períodos mais famosos da história do Egito é o Novo Império, durante o qual o país experimentou um período de grande prosperidade e poder. Sob os governos de faraós como Hatshepsut, Tutancâmon e Ramsés II, o Egito expandiu suas fronteiras e construiu impressionantes templos e tumbas.
+Após séculos de dominação estrangeira, o Egito foi conquistado pelos romanos em 30 a.C., tornando-se parte do Império Romano e, posteriormente, do Império Bizantino. No século VII, o Egito foi invadido pelos árabes muçulmanos, marcando o início da influência islâmica no país.
+Ao longo dos séculos, o Egito passou por mudanças políticas e sociais, enfrentando períodos de estabilidade e instabilidade. Em 1952, um movimento militar liderado por Gamal Abdel Nasser depôs a monarquia, estabelecendo um regime republicano que continua até os dias de hoje.
+O Egito é famoso por sua rica herança arqueológica, incluindo os templos de Luxor e Karnak, o Vale dos Reis, as tumbas dos faraós e as icônicas pirâmides. O país também é conhecido pelo seu legado cultural, que inclui a escrita hieroglífica, as práticas religiosas dos antigos egípcios e a influência duradoura de suas artes e arquitetura.
+A história do Egito é uma jornada fascinante através dos séculos, revelando uma civilização que deixou um impacto duradouro na humanidade e continua a atrair a admiração e o interesse de pessoas de todo o mundo.
+`;
+        pais_curiosidade.innerHTML = `Uma das curiosidades mais intrigantes sobre as pirâmides é a precisão com que foram construídas. Elas têm lados praticamente retos e uma orientação precisa em relação aos pontos cardeais, apontando para o norte verdadeiro. Além disso, as pedras usadas para a construção são de um tamanho e peso surpreendentes, algumas chegando a pesar várias toneladas.`;
+        frase_historica.innerHTML = `"Seguir é imitar, imitar é reflexo e reflexo não é a coisa em si."`
+        imagem_figura.innerHTML = `<img src="https://s5.static.brasilescola.uol.com.br/be/2022/08/cleopatra.jpg">` 
+      }
+      if(paisEscolhido == "nenhum"){
+        bandeira_pais.innerHTML = '';
+        historia_titulo.innerHTML = '';
+        historia_resumo.innerHTML = '';
+        pais_curiosidade.innerHTML = '';
+        frase_historica.innerHTML = '';
+        imagem_figura.innerHTML = ''; 
+      }
+    }
 </script>
