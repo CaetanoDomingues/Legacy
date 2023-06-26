@@ -23,6 +23,6 @@ app.use("/", inicialRouter);
 
 app.listen(PORTA, ()  => {
     console.log(`Abrindo o servidor do site individual, clique aqui para visualizar: http://localhost:${PORTA} \n
-    Você está rodando sua aplicação em Ambiente de ${process.env.AMBIENTE_PROCESSO} \n
+    Você está rodando sua aplicação em Ambiente de ${process.env.AMBIENTE_PROCESSO} do Legacy \n
 `);
 });

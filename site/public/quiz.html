@@ -1,65 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="icon" href="./img/Logo_definitiva.png  ">
-    <link rel="stylesheet" href="./css/quiz.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+    <link rel="icon" href="./img/Logo_definitiva.png  " />
+    <link rel="stylesheet" href="./css/quiz.css" />
+  </head>
+  <body>
     <div class="header">
-        <div class="header_h1">
-           <h1 onclick="VerGrafico()">Gráficos</h1>
-           <h1 onclick="VerHome()">Home</h1>
-           <h1 onclick="VerLer()">Ler sobre</h1>
-        </div> 
-     </div>
-    <div class="numeracao">
-      <div class="pergunta_number">
-        <h2>Pergunta Um</h2>
+      <div class="header_h1">
+        <h1 onclick="VerGrafico()">Gráficos</h1>
+        <h1 onclick="VerHome()">Home</h1>
+        <h1 onclick="VerLer()">Ler sobre</h1>
       </div>
     </div>
-     <div class="container">
-      <div class="tittle">
-        <div class="numero">
-          <h2>1.</h2>
-        </div>
-          <div class="pergunta">
-            <h2>Quando começou a primeira guerra mundial?
-            </h2>
-          </div>
-        </div>
-        <div class="escolha">
-          <div class="btn-esquerdo">
-            <div class="btn">
-              <h2>1910</h2>
-            </div>
-            <div class="btn">
-              <h2>1912</h2>
-            </div>
-          </div>
-            <div class="btn-direito">
-              <div class="btn">
-                <h2>1908</h2>
-              </div>
-              <div class="btn">
-                <h2>1914</h2>
-              </div>
-            </div>
+    <div class="numeracao" id="numero_questao">
+      <div class="pergunta_number" id="questao">
+        <h2>Pergunta 1</h2>
       </div>
-     </div>
+    </div>
+    <div class="container" id="caixa_pai">
+      <div class="tittle">
+        <div class="pergunta" id="pergunta_quiz">
+          <h2>Quando começou a primeira guerra mundial?</h2>
+        </div>
+      </div>
+      <div class="escolha" id="caixa_filho">
+        <div class="btn-esquerdo" id="coluna_esquerda">
+          <div class="btn" onclick="Resposta(1)">
+            <h2 id="resposta_sup_esq">1910</h2>
+          </div>
+          <div class="btn" onclick="Resposta(2)">
+            <h2 id="resposta_inf_esq">1912</h2>
+          </div>
+        </div>
+        <div class="btn-direito" id="coluna_direita">
+          <div class="btn" onclick="Resposta(3)">
+            <h2 id="resposta_sup_dir">1908</h2>
+          </div>
+          <div class="btn" onclick="Resposta(4)">
+            <h2 id="resposta_inf_dir">1914</h2>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="footer"></div>
-</body>
+  </body>
 </html>
 <script>
-    function VerGrafico(){
-      location.href = 'graficos.html'
-    }
-    function VerHome(){
-        location.href = 'home.html'
-      }
-    function VerLer(){
-          location.href = 'ler.html'
+  function VerGrafico() {
+    location.href = "graficos.html";
+  }
+  function VerHome() {
+    location.href = "home.html";
+  }
+  function VerLer() {
+    location.href = "ler.html";
+  }
+  // Função para executar todo o quiz
+  var questoes = [
+    "Quem é o primeiro presidente dos Estados Unidos?",
+    "Qual foi o período conhecido como a Idade de Ouro de Roma?",
+    "Quem foi o primeiro americano a ganhar um Nobel da Paz?",
+    "Onde é o país natal de Joana d Arc?",
+    "Quem foi o primeiro homem a pisar na lua?",
+    "Como os romanos chamavam a Escócia?",
+    "Quais países lutaram na Guerra dos Cem Anos?",
+    "Qual país realizou o Brexit?",
+    "Qual imperador construiu o Coliseu?",
+    "A guerra do ópio foi uma batalha entre quais dois países?",
+    "Quem teve um caso com Cleópatra e a fez rainha do Egito?",
+    'Qual foi o autor da "Divina Comédia"?',
+    "Qual a cidade que foi a capital do Império romano depois de Roma?",
+    "Qual foi o presidente que inaugurou a CSN (Companhia Siderúrgica Nacional)?",
+  ];
+  var acertos = 0;
+  var erros = 0;
+  var i = 0;
+  function Resposta(numero) {
+    while (i <= questoes.length) {
+      i++;
+      if (i == 1) {
+        questao.innerHTML = `<h2>Pergunta ${i + 1}</h2>`;
+        pergunta_quiz.innerHTML = `<h2>${questoes[i - 1]}</h2>`;
+        resposta_sup_esq.innerHTML = `Benjamin Franklin`;
+        resposta_inf_esq.innerHTML = `Theodore Roosevelt`;
+        resposta_sup_dir.innerHTML = `Lyndon Johnson`;
+        resposta_inf_dir.innerHTML = `George Washington`;
+        console.log(i);
+        if (numero == 4) {
+          acertos++;
+        } else {
+          erros++;
         }
+        return;
+      }
+      if (i == 2) {
+        questao.innerHTML = `<h2>Pergunta ${i + 1}</h2>`;
+        pergunta_quiz.innerHTML = `<h2>${questoes[i - 1]}</h2>`;
+        resposta_sup_esq.innerHTML = `Império`;
+        resposta_inf_esq.innerHTML = `Republica`;
+        resposta_sup_dir.innerHTML = `Ditadura`;
+        resposta_inf_dir.innerHTML = `Monarquia`;
+        console.log(i);
+        if (numero == 1) {
+          acertos++;
+        } else {
+          erros++;
+        }
+        return;
+      }
+      if (i == 3) {
+        questao.innerHTML = `<h2>Pergunta ${i + 1}</h2>`;
+        pergunta_quiz.innerHTML = `<h2>${questoes[i - 1]}</h2>`;
+        resposta_sup_esq.innerHTML = `Frank Sinatra`;
+        resposta_inf_esq.innerHTML = `Theodore Roosevelt`;
+        resposta_sup_dir.innerHTML = `Franklin Roosevelt`;
+        resposta_inf_dir.innerHTML = `Robert Oppenheimer`;
+        if (numero == 2) {
+          acertos++;
+        } else {
+          erros++;
+        }
+        return;
+      }
+      if (i == 4) {
+        questao.innerHTML = `<h2>Pergunta ${i + 1}</h2>`;
+        pergunta_quiz.innerHTML = `<h2>${questoes[i - 1]}</h2>`;
+        resposta_sup_esq.innerHTML = `Austria`;
+        resposta_inf_esq.innerHTML = `França`;
+        resposta_sup_dir.innerHTML = `Países Baixos`;
+        resposta_inf_dir.innerHTML = `Inglaterra`;
+        if (numero == 2) {
+          acertos++;
+        } else {
+          erros++;
+        }
+        return;
+      }
+      if (i == 5) {
+        questao.innerHTML = `<h2>Pergunta ${i + 1}</h2>`;
+        pergunta_quiz.innerHTML = `<h2>${questoes[i - 1]}</h2>`;
+        resposta_sup_esq.innerHTML = `Yuri Gargarin`;
+        resposta_inf_esq.innerHTML = `Buzz Aldrin`;
+        resposta_sup_dir.innerHTML = `Neil Armstrong`;
+        resposta_inf_dir.innerHTML = `Michael Collins`;
+        if (numero == 3) {
+          acertos++;
+        } else {
+          erros++;
+        }
+        return;
+      }
+      if (i == 6) {
+        questao.innerHTML = `<h2>Pergunta ${i + 1}</h2>`;
+        pergunta_quiz.innerHTML = `<h2>${questoes[i - 1]}</h2>`;
+        resposta_sup_esq.innerHTML = `Caledônia`;
+        resposta_inf_esq.innerHTML = `Balcãs`;
+        resposta_sup_dir.innerHTML = `Vinlândia`;
+        resposta_inf_dir.innerHTML = `Gália`;
+        if (numero == 1) {
+          acertos++;
+        } else {
+          erros++;
+        }
+        return;
+      }
+      if (i == 7) {
+        questao.innerHTML = `<h2>Pergunta ${i + 1}</h2>`;
+        pergunta_quiz.innerHTML = `<h2>${questoes[i - 1]}</h2>`;
+        resposta_sup_esq.innerHTML = `França e Espanha`;
+        resposta_inf_esq.innerHTML = `Portugal e Inglaterra`;
+        resposta_sup_dir.innerHTML = `Escócia e Inglaterra`;
+        resposta_inf_dir.innerHTML = `França e Inglaterra`;
+        if (numero == 4) {
+          acertos++;
+        } else {
+          erros++;
+        }
+        return;
+      }
+      if (i == 8) {
+        questao.innerHTML = `<h2>Pergunta ${i + 1}</h2>`;
+        pergunta_quiz.innerHTML = `<h2>${questoes[i - 1]}</h2>`;
+        resposta_sup_esq.innerHTML = `Irlanda`;
+        resposta_inf_esq.innerHTML = `Reino Unido`;
+        resposta_sup_dir.innerHTML = `Inglaterra`;
+        resposta_inf_dir.innerHTML = `Alemanha`;
+        if (numero == 2) {
+          acertos++;
+        } else {
+          erros++;
+        }
+        return;
+      }
+      if (i == 9) {
+        questao.innerHTML = `<h2>Pergunta ${i + 1}</h2>`;
+        pergunta_quiz.innerHTML = `<h2>${questoes[i - 1]}</h2>`;
+        resposta_sup_esq.innerHTML = `Vespasiano`;
+        resposta_inf_esq.innerHTML = `Nero`;
+        resposta_sup_dir.innerHTML = `Otaviano`;
+        resposta_inf_dir.innerHTML = `Caligula`;
+        if (numero == 1) {
+          acertos++;
+        } else {
+          erros++;
+        }
+        return;
+      }
+      if (i == 10) {
+        questao.innerHTML = `<h2>Pergunta ${i + 1}</h2>`;
+        pergunta_quiz.innerHTML = `<h2>${questoes[i - 1]}</h2>`;
+        resposta_sup_esq.innerHTML = `Itália e Somália`;
+        resposta_inf_esq.innerHTML = `Vietña e França`;
+        resposta_sup_dir.innerHTML = `Inglaterra e Camboja`;
+        resposta_inf_dir.innerHTML = `Inglaterra e China`;
+        return;
+        if (numero == 4) {
+          acertos++;
+        } else {
+          erros++;
+        }
+      }
+      if (i == 11) {
+        questao.innerHTML = `<h2>Pergunta ${i + 1}</h2>`;
+        pergunta_quiz.innerHTML = `<h2>${questoes[i - 1]}</h2>`;
+        resposta_sup_esq.innerHTML = `Júlio César`;
+        resposta_inf_esq.innerHTML = `Marco Antônio`;
+        resposta_sup_dir.innerHTML = `Otaviano`;
+        resposta_inf_dir.innerHTML = `Marco Aurélio`;
+        if (numero == 1) {
+          acertos++;
+        } else {
+          erros++;
+        }
+        return;
+      }
+      if (i == 12) {
+        questao.innerHTML = `<h2>Pergunta ${i + 1}</h2>`;
+        pergunta_quiz.innerHTML = `<h2>${questoes[i - 1]}</h2>`;
+        resposta_sup_esq.innerHTML = `Leonardo da Vinci`;
+        resposta_inf_esq.innerHTML = `Dante Alighieri`;
+        resposta_sup_dir.innerHTML = `Nicolau Maquiavel`;
+        resposta_inf_dir.innerHTML = `Cecco Angiolieri`;
+        if (numero == 2) {
+          acertos++;
+        } else {
+          erros++;
+        }
+        return;
+      }
+      if (i == 13) {
+        questao.innerHTML = `<h2>Pergunta ${i + 1}</h2>`;
+        pergunta_quiz.innerHTML = `<h2>${questoes[i - 1]}</h2>`;
+        resposta_sup_esq.innerHTML = `Veneza`;
+        resposta_inf_esq.innerHTML = `Constantinopla`;
+        resposta_sup_dir.innerHTML = `Atenas`;
+        resposta_inf_dir.innerHTML = `Alexandria`;
+        if (numero == 2) {
+          acertos++;
+        } else {
+          erros++;
+        }
+        return;
+      }
+      if (i == 14) {
+        questao.innerHTML = `<h2>Pergunta ${i + 1}</h2>`;
+        pergunta_quiz.innerHTML = `<h2>${questoes[i - 1]}</h2>`;
+        resposta_sup_esq.innerHTML = `Juscelino Kubitschek`;
+        resposta_inf_esq.innerHTML = `Gaspar Dutra`;
+        resposta_sup_dir.innerHTML = `Getúlio Vargas`;
+        resposta_inf_dir.innerHTML = `Washington Luís`;
+        if (numero == 3) {
+          acertos++;
+        } else {
+          erros++;
+        }
+        return;
+      }
+    }
+    questao.innerHTML = "";
+    numero_questao.style.display = "none";
+    coluna_esquerda.style.display = "none";
+    coluna_direita.style.display = "none";
+  
+    if (acertos < 5) {
+      pergunta_quiz.innerHTML = `<h1 style="font-size: 200%">Você acertou ${acertos} de 15</h1> `;
+    }
+    if (acertos >= 5 && acertos <= 10) {
+      pergunta_quiz.innerHTML = `<h1 style="font-size: 200%">Você acertou ${acertos} de 15</h1> `;
+    }
+    if (acertos > 10) {
+      pergunta_quiz.innerHTML = `<h1 style="font-size: 200%">Você acertou ${acertos} de 15</h1> `;
+    }
+    Registro_quiz()
+  }
+
+  function Registro_quiz() {
+    acertos;
+    erros;
+    var fkusuario = sessionStorage.ID_USUARIO;
+console.log('Estou no início da operação')
+    if (acertos == "" || erros == ""|| fkusuario == '') {
+      return false;
+    }
+    console.log('Estou entrando no fetch do registro')
+    fetch("/registro/registrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        acertosServer: acertos,
+        errosServer: erros,
+        fkusuarioServer: fkusuario,
+      }),
+    }).then(function (resposta) {
+      console.log("resposta: ", resposta);
+      if (resposta.ok) {
+        questao.innerHTML = "Enviando dados do quiz para o banco";
+      } else {
+        throw "Houve um erro ao enviar para o banco";
+      }
+    })
+    .catch(function(resposta){
+      console.log(`#ERRO: ${resposta}`)
+    });
+    return false
+  }
 </script>

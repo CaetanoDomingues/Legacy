@@ -1,53 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="stylesheet" href="./css/home.css">
-    <link rel="icon" href="./img/Logo_definitiva.png  ">
-</head>
-<body>
-  <div class="header">
-     <div class="header_h1">
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="icon" href="./img/Logo_definitiva.png  " />
+  </head>
+  <body>
+    <div class="header">
+      <div class="header_h1">
         <h1 onclick="VerGrafico()">Gráficos</h1>
         <h1 onclick="VerHome()">Home</h1>
         <h1 onclick="VerLer()">Ler sobre</h1>
-     </div> 
-  </div>
-      <div class="container">
-          <div class="header_container">
-            <h3 id="usuario_texto">
-            </h3>
+      </div>
+    </div>
+    <div class="container">
+      <div class="header_container">
+        <h3 id="usuario_texto"></h3>
+      </div>
+      <div class="divisoria"></div>
+      <div class="div">
+        <div class="container_banner">
+          <div class="quiz" onclick="VerQuiz()">
+            <h2>Responda 15 questões de história</h2>
           </div>
-            <div class="divisoria"></div>
-              <div class="div">
-                <div class="container_banner">
-                  <div class="quiz" onclick="VerQuiz()">
-                    <h2>
-                      Responda 15 questões de história
-                    </h2>
-                      </div>
-                        </div>
-                              </div>  
-                                    </div>
-                                          <div class="footer"></div>
-</body>
+        </div>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </body>
 </html>
 
 <script>
-    function VerGrafico(){
-      location.href = 'graficos.html'
-    }
-    function VerHome(){
-        location.href = 'home.html'
-      }
-    function VerLer(){
-          location.href = 'ler.html'
-        }
-    function VerQuiz(){
-          location.href = 'quiz.html'
-    }
-    usuario_texto.innerHTML = `Olá, ${sessionStorage.NOME_USUARIO}`
-
+  function VerGrafico() {
+    location.href = "graficos.html";
+  }
+  function VerHome() {
+    location.href = "home.html";
+  }
+  function VerLer() {
+    location.href = "ler.html";
+  }
+  function VerQuiz() {
+    location.href = "quiz.html";
+  }
+  usuario_texto.innerHTML = `Olá, ${sessionStorage.NOME_USUARIO}`;
+  console.log(`${sessionStorage.ID_USUARIO}`)
 </script>

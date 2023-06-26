@@ -1,22 +1,26 @@
-CREATE DATABASE Legacy;
-USE Legacy;
+create database Legacy;
+use Legacy;
+drop database Legacy;
 
-CREATE TABLE usuario(
-id INT PRIMARY KEY AUTO_INCREMENT,
+create table Usuario(
+id int primary key auto_increment,
 nome varchar(45),
 email varchar(45),
-senha char(8) check (senha >= 8)
-)AUTO_INCREMENT = 100;
+senha varchar(15)
+)auto_increment = 100;
 
-CREATE TABLE paises(
-id INT PRIMARY KEY AUTO_INCREMENT,
-nome varchar(45),
-fkUser int,
-foreign key (fkUser) references usuario(id)
-);
+create table Telefone(
+idTelefone int auto_increment,
+telefone_celular char(16),
+fkUsuario int,
+foreign key(fkUsuario) references Usuario(id),
+primary key(idTelefone)
+)auto_increment = 1000;
 
-CREATE TABLE telefone(
-idTelefone INT PRIMARY KEY AUTO_INCREMENT,
-telefone_celular CHAR(16),
-fkUser_Celular INT
-)AUTO_INCREMENT = 1000;
+create table Quiz(
+idQuiz int primary key auto_increment,
+acertos decimal,
+erros decimal,
+fkUsuario int,
+foreign key(fkUsuario) references Usuario(id)
+)auto_increment = 1;
