@@ -15,6 +15,7 @@
         <h1 onclick="VerLer()">Ler sobre</h1>
       </div>
     </div>
+    <!-- Reorganização da tela quiz -->
     <div class="numeracao" id="numero_questao">
       <div class="pergunta_number" id="questao">
         <h2>Pergunta 1</h2>
@@ -59,6 +60,7 @@
     location.href = "ler.html";
   }
   // Função para executar todo o quiz
+  // Criar um botao unico para inciar o quiz, da maneira certa
   var questoes = [
     "Quem é o primeiro presidente dos Estados Unidos?",
     "Qual foi o período conhecido como a Idade de Ouro de Roma?",
@@ -74,6 +76,7 @@
     'Qual foi o autor da "Divina Comédia"?',
     "Qual a cidade que foi a capital do Império romano depois de Roma?",
     "Qual foi o presidente que inaugurou a CSN (Companhia Siderúrgica Nacional)?",
+    "Quando começou a primeira guerra mundial?"
   ];
   var acertos = 0;
   var erros = 0;
@@ -278,6 +281,20 @@
           erros++;
         }
         return;
+      }
+      if(i == 15){
+        questao.innerHTML = `<h2>Pergunta ${i + 1}</h2>`;
+        pergunta_quiz.innerHTML = `<h2>${questoes[i - 1]}</h2>`;
+        resposta_sup_esq.innerHTML = `1910`;
+        resposta_inf_esq.innerHTML = `1908`;
+        resposta_sup_dir.innerHTML = `1912`;
+        resposta_inf_dir.innerHTML = `1914`;
+        if (numero == 4) {
+          acertos++;
+        } else {
+          erros++;
+        }
+        return; 
       }
     }
     questao.innerHTML = "";
