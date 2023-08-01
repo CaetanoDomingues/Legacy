@@ -7,7 +7,6 @@
     <title>Cadastro</title>
     <link rel="stylesheet" href=./css/cadastro.css>
     <link rel="icon" href="./img/Logo_definitiva.png"/>
-
 </head>
 <body>
     <!-- Inserindo o pop-up de erro -->
@@ -34,9 +33,13 @@
             </h2>
             <input type="text" id="ipt_email">
             <h2>
+                Celular
+            </h2>
+            <input type="text" id="ipt_celular">
+            <h2>
                 Senha
             </h2>
-            <input type="password" id="ipt_senha" placeholder="******">
+            <input type="password" id="ipt_senha" placeholder="*****">
             <h2>
                 Confirmar senha
             </h2>
@@ -60,13 +63,14 @@
     // Agora vá para o método fetch logo abaixo
     var nome = ipt_nome.value;
     var email = ipt_email.value;
+    var celular = ipt_celular.value;
     var senha = ipt_senha.value;
     var confirmacao = ipt_confirmar.value;
-
     if (
       nome == "" ||
       email == "" ||
       senha == "" ||
+      celular == "" ||
       confirmacao== ""
     ) {
       cardErro.style.display = "block";
@@ -79,7 +83,7 @@
 
       // finalizarAguardar();
       return false;
-    }
+    } else{
     fetch("/usuario/cadastrar", {
       method: "POST",
       headers: {
@@ -91,6 +95,7 @@
         nomeServer: nome,
         emailServer: email,
         senhaServer: senha,
+        celularServer: celular,
       }),
     })
       .then(function (resposta) {
@@ -106,8 +111,8 @@
             window.location = "login.html";
           }, "2000");
           
-          limparFormulario();
-          // finalizarAguardar();
+          // limparFormulario();
+          // // finalizarAguardar();
         } else {
           throw "Houve um erro ao tentar realizar o cadastro!";
         }
@@ -119,8 +124,5 @@
 
     return false;
   }
-  // function sumirMensagem() {
-  //   cardErro.style.display = "none";
-  // }
-    
+}   
 </script>

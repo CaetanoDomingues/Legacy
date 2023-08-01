@@ -24,7 +24,7 @@ body{
     border: solid 1px yellow;
     position: absolute;
     left: 450px;
-    top: 60px;
+    top: 5%;
     flex-direction: column;
     justify-content: start;
     align-items: center;
@@ -83,7 +83,7 @@ h2{
     width: 230px;
     position: fixed;
     border-radius: 4px;
-    border: #e6005a 3px solid;
+    border: solid 2.5px #F4C507;
     padding: 10px;
     margin-right: 10%;
   }
@@ -91,4 +91,5 @@ h2{
   .card_erro #mensagem_erro{
     font-weight: 500;
     font-size: 20px;
+    color: #F4C507;
   }

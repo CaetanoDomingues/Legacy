@@ -9,7 +9,7 @@ var app = express();
 
 var usuarioRouter = require("./src/routes/usuario");
 var inicialRouter = require("./src/routes/inicial");
-
+var registroRouter = require("./src/routes/registro");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -19,6 +19,7 @@ app.use(cors());
 
 app.use("/usuario", usuarioRouter); 
 app.use("/", inicialRouter);
+app.use("/registro",registroRouter)
  
 
 app.listen(PORTA, ()  => {

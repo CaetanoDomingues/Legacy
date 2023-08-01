@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./css/home.css" />
     <link rel="icon" href="./img/Logo_definitiva.png  " />
   </head>
-  <body>
+  <body onload="Guardar_id()">
     <div class="header">
       <div class="header_h1">
         <h1 onclick="VerGrafico()">Gráficos</h1>
@@ -23,7 +23,7 @@
       <div class="div">
         <div class="container_banner">
           <div class="quiz" onclick="VerQuiz()">
-            <h2>Responda 15 questões de história</h2>
+            <h2>Responda 10 questões de história</h2>
           </div>
         </div>
       </div>
@@ -46,5 +46,28 @@
     location.href = "quiz.html";
   }
   usuario_texto.innerHTML = `Olá, ${sessionStorage.NOME_USUARIO}`;
-  console.log(`${sessionStorage.ID_USUARIO}`)
+  console.log(`${sessionStorage.ID_USUARIO}`);
+
+  function Guardar_id() {
+    var id = sessionStorage.ID_USUARIO;
+
+    fetch(`/usuario/guardar/${id}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          console.log("ID FOI GUARDADO COM SUCESSO!");
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        // finalizarAguardar();
+      });
+    return false;
+  }
 </script>
